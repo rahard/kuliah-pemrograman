@@ -12,6 +12,13 @@ Crawler akan mengakses akun instagram tersebut dan mengambil data followernya.
 (Asumsinya adalah akun instagram tersebut terbuka / dapat dilihat.)
 Daftar follower tersebut disetor kembali ke sebuah Queue (disebut **inQueue**).
 
-Di dalamnya ada banyak hal lagi.
+Di dalamnya ada banyak proses yang akan dijabarkan sebagai berikut.
+
+## InQueue processing
+Data di **inQueue** diambil dan dilakukan beberapa hal
+- parsing untuk dimasukkan ke database (yang kemungkinan menggunakan Redis)
+- untuk setiap follower yang baru diterima, dicek apakah sudah pernah dicrawl
+(dengan menguji apakah sudah ada di dalam database), jika belum maka 
+follower tersebut dimasukkan ke **outQueue*
 
 Budi Rahardjo (Dosen)
