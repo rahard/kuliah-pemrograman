@@ -5,7 +5,12 @@ logging.basicConfig()
 # Parse CLODUAMQP_URL (fallback to localhost)
 #url = os.environ.get('CLOUDAMQP_URL', 'amqp://guest:guest@localhost/%2f')
 #url = 'amqp://dppueivp:8gHNY8X_xNkryB9lIx-vQWdyqa_-hTAT@clam.rmq.cloudamqp.com/dppueivp'
-url = os.environ.get('CLOUDAMQP_URL', 'amqp://user1:user1@35.187.240.110:5672')
+try:
+   url = os.environ["CLOUDAMPQ_URL"]
+except KeyError:
+   print("Environment variabel belum diset")
+   sys.exit(1)
+
 params = pika.URLParameters(url)
 params.socket_timeout = 5
 
