@@ -5,12 +5,12 @@ dan satunya lagi (**OutQueue**) berisi ID Instagram yang menunggu di*crawl*).
 
 Format data yang masuk ke **inQueue** adalah:
 
-IDpenyetor IDygdicrawl Follower
+> IDpenyetor IDygdicrawl Follower
 
 Data tersebut dapat berulang apabila *IDyangdicrawl* memiliki banyak followers.
 
 Sementara itu output yang tersedia di **outQueue** memiliki format:
 
-IDtocrawl
+> IDtocrawl
 
 *IDtocrawl* adalah ID Instagram yang akan dicrawl.
