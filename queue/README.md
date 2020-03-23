@@ -1,4 +1,4 @@
-#Queue
+# Queue
 
 Ada dua queue dalam sistem ini. Satu (**inQueue**) menerima data (dari penyetor data)
 dan satunya lagi (**OutQueue**) berisi ID Instagram yang menunggu di*crawl*).
