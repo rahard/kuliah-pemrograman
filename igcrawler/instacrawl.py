@@ -19,8 +19,8 @@ if (IDtocheck == 'none'):
    sys.exit(0)
 
 # your instagram account
-userid=''
-password=''
+userid='kelas_br'
+password='itb2020bdg'
 
 # maximum number of followers to get
 # just to be on the safe side, set it, to less than 100
@@ -31,8 +31,8 @@ DEBUG = False
 
 chrome_options = webdriver.ChromeOptions()
 # if you do not want to see what's going on, uncomment this line
-chrome_options.add_argument('--headless')
-chrome_options.add_argument('--no-sandbox')
+#chrome_options.add_argument('--headless')
+#chrome_options.add_argument('--no-sandbox')
 
 #
 # program starts here - do not touch, unless you know what you're doing
@@ -142,7 +142,7 @@ for n in range(jumlah):
    try:
       follower_name = driver.find_element_by_xpath(path)
       nama = (follower_name.text)
-      print(nama)
+      print(IDtocheck, nama)
    except:
       print("tidak menemukan follower name")
 
