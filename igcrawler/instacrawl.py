@@ -14,6 +14,10 @@ if len(sys.argv) < 2:
 IDtocheck = sys.argv[1]
 # IDtocheck = 'rahard'
 
+# kill switch. do nothing if the ID to check is "none"
+if (IDtocheck == 'none'):
+   sys.exit(0)
+
 # your instagram account
 userid=''
 password=''
@@ -23,7 +27,7 @@ password=''
 # still find ways to make it better 
 MAXfollower = 10
 # set to True for verbose messages
-DEBUG = True
+DEBUG = False
 
 chrome_options = webdriver.ChromeOptions()
 # if you do not want to see what's going on, uncomment this line
@@ -49,6 +53,7 @@ def signin():
       return userid
    except:
       print("Gagal login")
+      return "gagal"
 
 def cekuser(orang):
    try:
@@ -80,11 +85,16 @@ def cekfollower():
       print("DEBUG: followerValue[0] "+jmlfollower)
    return jmlfollower
 
+#######################################
+### Main program really starts here ###
+#######################################
 
 if (DEBUG):
    print("Crawling "+IDtocheck)
    print("Logging in")
-signin()
+hasil = signin()
+if (hasil == "gagal"):
+   sys.exit(1)
 
 # cari user - tunggu sebentar
 if (DEBUG):
@@ -131,7 +141,7 @@ for n in range(jumlah):
    try:
       follower_name = driver.find_element_by_xpath(path)
       nama = (follower_name.text)
-      print(x, nama)
+      print(nama)
    except:
       print("tidak menemukan follower name")
 
