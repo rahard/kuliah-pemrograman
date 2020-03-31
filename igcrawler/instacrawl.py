@@ -31,8 +31,8 @@ DEBUG = False
 
 chrome_options = webdriver.ChromeOptions()
 # if you do not want to see what's going on, uncomment this line
-#chrome_options.add_argument('--headless')
-#chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
 
 #
 # program starts here - do not touch, unless you know what you're doing
@@ -52,7 +52,8 @@ def signin():
       driver.find_element_by_class_name("L3NKy").click()
       return userid
    except:
-      print("Gagal login")
+      if (DEBUG):
+         print("Gagal login")
       return "gagal"
 
 def cekuser(orang):
