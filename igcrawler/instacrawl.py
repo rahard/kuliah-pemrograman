@@ -19,8 +19,8 @@ if (IDtocheck == 'none'):
    sys.exit(0)
 
 # your instagram account
-userid='kelas_br'
-password='itb2020bdg'
+userid=''
+password=''
 
 # maximum number of followers to get
 # just to be on the safe side, set it, to less than 100
